@@ -22,8 +22,6 @@ export class ChatService {
               public afAuth: AngularFireAuth ) { 
                 this.afAuth.authState.subscribe( user => {
 
-                  console.log( 'Estado del usuario: ', user );
-
                   if( !user ){
                     return;
                   }
@@ -57,7 +55,6 @@ export class ChatService {
 
     return this.itemsCollection.valueChanges()
             .pipe(map( (mensajes: Mensaje[]) =>{
-              console.log( mensajes );
 
               this.chats = [];
 
